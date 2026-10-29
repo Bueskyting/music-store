@@ -1,13 +1,37 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  margin-top: 50px;
+  margin: 0;
+  padding: 50px 16px;
+  min-height: 100vh;
   background-color: rgb(1, 1, 41);
   font-family: 'Outfit', sans-serif;
+  position: relative;
+}
+
+/* faint wave pattern behind the card */
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 437px;
+  background: url('./images/pattern-background-desktop.svg') top center / cover no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+button {
+  font: inherit;
 }
 
 img.heroimg {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  width: 500px;
+  display: block;
+  width: 100%;
+  height: auto;
   box-shadow: 0px 0px 30px 5px rgb(36, 26, 26);
 }
 
@@ -15,37 +39,36 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.change {
-  text-decoration: underline;
-}
-
-a {
-  text-decoration: none;
+  padding: 0 1em;
 }
 
 .container {
-  display: flex;
+  position: relative;
   margin: 0 auto;
   display: flex;
   background-color: rgb(235, 226, 226);
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   border-radius: 15px;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
 }
 
+.box {
+  width: 100%;
+}
+
 header p {
   text-align: center;
-  box-sizing: border-box;
-  width: 60%;
+  max-width: 300px;
 }
 
 main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1em;
   margin: 0 1.5em 1.5em 1.5em;
   padding: 1em;
   border-radius: 10px;
@@ -59,20 +82,46 @@ div.music-icon {
   gap: 30px;
 }
 
-/* 
-Button effect settings 
+div.music-icon > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 30px;
+}
+
+div.music-icon h2,
+div.music-icon p {
+  margin: 0;
+}
+
+.change {
+  background: none;
+  border: none;
+  padding: 0;
+  color: rgb(28, 0, 150);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.change:hover {
+  text-decoration: none;
+}
+
+/*
+Button effect settings
 */
 
 footer {
-  margin: 40px;
+  margin: 40px 1.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
 }
 
-button {
+.button {
   display: inline-block;
+  vertical-align: middle;
   border-radius: 15px;
   background-color: rgb(42, 0, 230);
   border: none;
@@ -80,7 +129,8 @@ button {
   text-align: center;
   font-size: 14px;
   padding: 13px;
-  width: 370px;
+  width: 100%;
+  max-width: 370px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -113,8 +163,21 @@ button {
 
 .shadow {
   background-color: rgba(82, 88, 126, 0.514);
-  color: #720f0f;
+  color: #4d0808;
+  border: none;
   padding: 10px;
   box-shadow: 4px 4px 4px 5px #a58c8c;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+/* narrow phones: smaller plan title so the row fits */
+@media (max-width: 420px) {
+  div.music-icon {
+    gap: 16px;
+  }
+
+  div.music-icon h2 {
+    font-size: 1.2em;
+  }
 }

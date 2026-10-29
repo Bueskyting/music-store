@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale>2">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Order Summary Component</title>
-        <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="container">
 
             <div class="box">
-                <img class="heroimg" src="./images/illustration-hero.svg" alt="">
+                <img class="heroimg" src="./images/illustration-hero.svg" alt="" width="450" height="220">
                 <header>
                     <h1>Order Summary</h1>
                     <p>You'll be able to listen to millions of songs, audio books and podcasts on any device anywhere you like!</p>
                 </header>
                 <main>
                     <div class="music-icon">
-                        <img src="./images/icon-music.svg" alt="music">
-                        <h2>10 Year Plan</h2>
-                        <p>$911.69</p>
+                        <img src="./images/icon-music.svg" alt="" width="48" height="48">
+                        <div>
+                            <h2>10 Year Plan</h2>
+                            <p>$911.69</p>
+                        </div>
                     </div>
-                    <div class="change">
-                        <a href="">Change</a>
-                    </div> 
+                    <button type="button" class="change">Change</button>
                 </main>
                 <footer>
-                    <button class="button" style="vertical-align: middle;"><span>Proceed to Payment</span></button>
-                    <a href=""><span class="shadow">Cancel Payment</span></a>
+                    <button type="button" class="button"><span>Proceed to Payment</span></button>
+                    <button type="button" class="shadow">Cancel Payment</button>
                 </footer>
             </div>
         </div>
